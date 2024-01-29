@@ -1,0 +1,16 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGTES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: restapi
+    ports:
+      - 25432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
